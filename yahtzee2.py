@@ -3,25 +3,26 @@ from die import Die
 #separat funktion för att rulla 5 tärningar
 #return värde 0-6: vilken du fick yahtzee i eller 0 för förlust
 def rollIt():
-    dies = [Die(), Die(), Die(), Die(), Die()]
-    for i, d in enumerate(dies):
+    dice = [Die(), Die(), Die(), Die(), Die()]
+    for i, d in enumerate(dice):
         d.DieRoll()
         #d.value = 5  # Test if yahtzee works
         print(f"{i}: {d}")
         #Nu har vi rullat fem tärningar och printat värdet av dem
 
     # YAHTZEE
+    #anta att vi har yahtzee
     yahFlag = True
     for j in range(1, 5):
-        #dubbelkolla att .value fungerar som tänkt här
         #Börja på index 1 (den andra) och jmf med den innan om de samma
-        if dies[j].value != dies[j-1].value:
+        if dice[j].value != dice[j-1].value:
             # Om inte samma: det är inte yahtzee
             yahFlag = False
+    #om alla var samma är flaggan ff true
     if yahFlag == True:
-        #print(f"You got YAHTZEE! in {self.ds[0].value}'s")
         #Istället för print, return value av yahtzee. print i main.
-        return(dies[1].value)
+        #När yahtzee, är alla samma värde så kan använda vilken som
+        return(dice[1].value)
     else:
         #Annars return 0 för förlust
         return(0)
