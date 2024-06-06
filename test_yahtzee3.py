@@ -1,10 +1,9 @@
-from yahtzee3 import YahtzeeMainClass
+#from yahtzee3 import YahtzeeMainClass
 from yahtzee3 import rollIt
 from yahtzee3 import checkYahtzee
 from yahtzee3 import main
 from die import Die
 
-import pytest
 
 
 def test_is_yahtzee_when_all_dice_matches():
@@ -28,5 +27,3 @@ def test_is_not_yahtzee_when_all_dice_not_matching_each_other():
     # Assert something?
     assert checkYahtzee(dice) == 0
 
-if __name__ == '__main__':
-    pytest.main()
