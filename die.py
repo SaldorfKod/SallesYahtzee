@@ -11,7 +11,7 @@ class Die(BoardGameMaterial):
         return "Dice shows " + str(self.value)
     
     @staticmethod
-    def DieRoll():
+    def die_roll():
         value = random.randint(1, 6)
         return value
     
